@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>Master Ascendant</title>
 
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -25,8 +27,51 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+
+      #wrap {
+        min-height: 100%;
+        height: auto;
+        margin: 0 auto -60px;
+        padding: 0 0 60px;
+      }
+
+      #footer {
+        height: 60px;
+        background-color: #f5f5f5;
+      }
+
+    </style>
+
   </head>
   <body>
-    <h1><i class="fa fa-leaf fa-5x"></i> Hello, world!</h1>
+    <div id="wrap">
+
+        <nav style="border-radius:0px; -webkit-border-radius:0px; -moz-border-radius:0px;" class="navbar navbar-inverse" role="navigation">
+          <div class="container">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+        </nav> <!-- END Nav -->
+
+        <div class="container">
+          <h1>content Area</h1>
+        </div>
+    </div><!-- End Wrap -->
+
+      <footer id="footer">
+        <div class="container">
+          <p>This is my footer.</p>
+        </div>
+      </footer><!-- End Footer -->
+
   </body>
 </html>
