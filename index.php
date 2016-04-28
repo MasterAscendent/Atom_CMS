@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title><?php echo $page_title.' | '.$site_title; ?></title>
+    <title><?php echo $page['title'].' | '.$site_title; ?></title>
 
     <meta name="viewport" content="width-device-width, initial-scale=1.0">
 
@@ -27,7 +27,9 @@
         </nav> <!-- END Nav -->
 
         <div class="container">
-          <h1>content Area</h1>
+          <h1><?php echo $page['header']; ?></h1>
+
+          <p><?php echo $page['body']; ?></p>
         </div>
     </div><!-- End Wrap -->
 
