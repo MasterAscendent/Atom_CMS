@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Master Ascendant</title>
+    <title><?php echo $page_title.' | '.$site_title; ?></title>
 
     <meta name="viewport" content="width-device-width, initial-scale=1.0">
 
