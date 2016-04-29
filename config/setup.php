@@ -9,6 +9,7 @@ DEFINE('D_TEMPLATE', 'template');
 
 # Functions:
 include('functions/data.php');
+include('functions/template.php');
 
 $site_title = 'Atom CMS 2.0';
 
