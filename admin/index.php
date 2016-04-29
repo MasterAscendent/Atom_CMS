@@ -96,28 +96,52 @@ if(!isset($_SESSION['username'])) {
               <div class="form-group">
 
                 <label for="title">Title:</label>
-                <input class="form-control" type="text" name="title" id=title placeholder="Page Title">
+                <input class="form-control" type="text" name="title" id="title" placeholder="Page Title">
+
+              </div>
+
+              <div class="form-group">
+
+                <label for="user">User:</label>
+                <select class="form-control" name="user" id="user">
+                  <option value="0">No user</option>
+
+                  <?php
+                    $q = "SELECT email FROM users ORDER BY first ASC";
+                    $r = mysqli_query($dbc, $q);
+
+                    while ($user_list = mysqli_fetch_assoc($r)) {
+
+                      $user_data = data_user($dbc, $user_list['email']);
+
+                      ?>
+
+                        <option value="0"><?php echo $user_data['fullname']; ?></option>
+
+                  <?php  } ?>
+
+                </select>
 
               </div>
 
               <div class="form-group">
 
                 <label for="label">label:</label>
-                <input class="form-control" type="text" name="label" id=label placeholder="Page Label">
+                <input class="form-control" type="text" name="label" id="label" placeholder="Page Label">
 
               </div>
 
               <div class="form-group">
 
                 <label for="header">Header:</label>
-                <input class="form-control" type="text" name="header" id=header placeholder="Page Header">
+                <input class="form-control" type="text" name="header" id="header" placeholder="Page Header">
 
               </div>
 
               <div class="form-group">
 
                 <label for="body">Body:</label>
-                <textarea class="form-control" name="body" rows="8" id=body placeholder="Page Body"></textarea>
+                <textarea class="form-control" name="body" rows="8" id="body" placeholder="Page Body"></textarea>
 
               </div>
 
