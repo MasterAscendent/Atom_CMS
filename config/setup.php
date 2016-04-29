@@ -1,5 +1,6 @@
 <?php
 // Setup File:
+error_reporting(0);
 
 # Database Connection Here...
 include('config/Connection.php');
@@ -8,11 +9,14 @@ include('config/Connection.php');
 DEFINE('D_TEMPLATE', 'template');
 
 # Functions:
+include('functions/sandbox.php');
 include('functions/data.php');
 include('functions/template.php');
 
 # Site Setup:
 $debug = data_setting_value($dbc, 'debug-status');
+
+$path = get_path();
 
 $site_title = 'Atom CMS 2.0';
 
