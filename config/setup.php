@@ -20,15 +20,14 @@ $path = get_path();
 
 $site_title = 'Atom CMS 2.0';
 
-if(isset($_GET['page'])) {
+if(!isset($path['call_parts'][0]) || $path['call_parts'][0] == '') {
+  // $path['call_parts'][0] = 'home'; // Set $path['call_parts'][0] equel the value given in the URL.
 
-  $pageid = $_GET['page']; // Set $pageid to equel the value given in the URL.
+  header('Location: home');
 
-} else {
-  $pageid = 'home'; // Set $pageid equal to 1 or AKA the Home Page.
 }
 
 # Page Setup
-$page = data_page($dbc, $pageid);
+$page = data_page($dbc, $path['call_parts'][0]);
 
  ?>
