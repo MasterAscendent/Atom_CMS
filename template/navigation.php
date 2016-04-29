@@ -1,8 +1,16 @@
 <nav style="border-radius:0px; -webkit-border-radius:0px; -moz-border-radius:0px;" class="navbar navbar-default" role="navigation">
   <div class="container">
     <ul class="nav navbar-nav">
-        <li<?php if($pageid == 1) { echo ' class="active"';} ?>><a href="?page=1">Home</a></li>
-        <li<?php if($pageid == 2) { echo ' class="active"';} ?>><a href="?page=2">About Us</a></li>
+        <?php
+          $q = "SELECT * FROM pages";
+          $r = mysqli_query($dbc, $q);
+
+          while($nav = mysqli_fetch_assoc($r)) { ?>
+
+          <li<?php if($pageid == $nav ['id']) { echo ' class="active"';} ?>><a href="?page=<?php echo $nav ['id']; ?>"><?php echo $nav ['label']; ?></a></li>
+
+          <?php } ?>
+
         <li><a href="#">FAQ</a></li>
         <li><a href="#">Contact</a></li>
     </ul>
