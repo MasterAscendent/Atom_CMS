@@ -36,30 +36,7 @@ if(!isset($_SESSION['username'])) {
       <div class="row">
           <div class="col-md-3">
 
-              <?php
-                if(isset($_POST['submitted']) == 1) {
 
-                  $title = mysqli_real_escape_string($dbc, $_POST['title']);
-                  $label = mysqli_real_escape_string($dbc, $_POST['label']);
-                  $header = mysqli_real_escape_string($dbc, $_POST['header']);
-                  $body = mysqli_real_escape_string($dbc, $_POST['body']);
-
-                  $q = "INSERT INTO pages (user, slug, title, label, header, body) VALUES ($_POST[user], '$_POST[slug]', '$title', '$label', '$header','$body')";
-                  $r = mysqli_query($dbc, $q);
-
-                  if($r) {
-
-                    $message = '<p>Page was added!</p>';
-
-                  } else {
-
-                    $message = '<p>Page could not be added becuase: '.mysqli_error($dbc);
-                    $message .= '<p>'.$q.'</p>';
-
-                  }
-                }
-
-               ?>
 
                <div class="list-group">
 
@@ -80,11 +57,9 @@ if(!isset($_SESSION['username'])) {
                  ?>
 
 
-                <a class="list-group-item" href="index.php?id=<?php echo $page_list['id']; ?>">
+                <a class="list-group-item <?php if($page_list['id'] == $opened['id']) { echo 'active'; } ?>" href="index.php?id=<?php echo $page_list['id']; ?>">
                   <h4 class="list-group-item-heading"><?php echo $page_list['title']; ?></h4>
                   <p class="list-group-item-text"><?php echo $blurb; ?></p>
-
-
                 </a>
 
                 <?php } ?>
@@ -100,18 +75,8 @@ if(!isset($_SESSION['username'])) {
 
             <?php if(isset($message)) { echo $message; } ?>
 
-            <?php
-              if(isset($_GET['id'])) {
 
-                $q = "SELECT * FROM pages WHERE id = $_GET[id]";
-                $r = mysqli_query($dbc, $q);
-
-                $opened = mysqli_fetch_assoc($r);
-
-              }
-             ?>
-
-            <form action="index.php" method="post" role="form">
+            <form action="index.php?id=<?php echo $opened['id']; ?>" method="post" role="form">
 
               <div class="form-group">
 
@@ -181,8 +146,8 @@ if(!isset($_SESSION['username'])) {
               </div>
 
               <button type="submit" class="btn btn-default">Save</button>
-
               <input type="hidden" name="submitted" value="1">
+              <input type="hidden" name="id" value="<?php echo $opened['id']; ?>">
             </form>
 
           </div>
