@@ -38,6 +38,26 @@ if(!isset($_SESSION['username'])) {
 
             <div class="list-group">
 
+              <?php
+                if(isset($_POST['submitted']) == 1) {
+
+                  $q = "INSERT INTO pages (title, label, header, body) VALUES ('$_POST[title]', '$_POST[label]', '$_POST[header]','$_POST[body]')";
+                  $r = mysqli_query($dbc, $q);
+
+                  if($r) {
+
+                    echo '<p>Page was added!</p>';
+
+                  } else {
+
+                    echo '<p>Page could not be added becuase: '.mysqli_error($dbc);
+                    echo '<p>'.$q.'</p>';
+
+                  }
+                }
+
+               ?>
+
             <?php
               $q = "SELECT * FROM pages ORDER BY title ASC";
               $r = mysqli_query($dbc, $q);
@@ -61,6 +81,8 @@ if(!isset($_SESSION['username'])) {
           </div>
 
           <div class="col-md-9">
+
+
 
             <form action="index.php" method="post" role="form">
 
@@ -94,6 +116,7 @@ if(!isset($_SESSION['username'])) {
 
               <button type="submit" class="btn btn-default">Save</button>
 
+              <input type="hidden" name="submitted" value="1">
             </form>
 
           </div>
