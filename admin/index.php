@@ -41,17 +41,22 @@ if(!isset($_SESSION['username'])) {
               <?php
                 if(isset($_POST['submitted']) == 1) {
 
-                  $q = "INSERT INTO pages (title, label, header, body) VALUES ('$_POST[title]', '$_POST[label]', '$_POST[header]','$_POST[body]')";
+                  $title = mysqli_real_escape_string($dbc, $_POST['title']);
+                  $label = mysqli_real_escape_string($dbc, $_POST['label']);
+                  $header = mysqli_real_escape_string($dbc, $_POST['header']);
+                  $body = mysqli_real_escape_string($dbc, $_POST['body']);
+
+                  $q = "INSERT INTO pages ($title, $label, $header, $body) VALUES ('$_POST[title]', '$_POST[label]', '$_POST[header]','$_POST[body]')";
                   $r = mysqli_query($dbc, $q);
 
                   if($r) {
 
-                    echo '<p>Page was added!</p>';
+                    $message = '<p>Page was added!</p>';
 
                   } else {
 
-                    echo '<p>Page could not be added becuase: '.mysqli_error($dbc);
-                    echo '<p>'.$q.'</p>';
+                    $message = '<p>Page could not be added becuase: '.mysqli_error($dbc);
+                    $message .= '<p>'.$q.'</p>';
 
                   }
                 }
@@ -82,6 +87,8 @@ if(!isset($_SESSION['username'])) {
 
           <div class="col-md-9">
 
+
+            <?php if(isset($message)) { echo $message; } ?>
 
 
             <form action="index.php" method="post" role="form">
