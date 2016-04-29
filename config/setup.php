@@ -21,7 +21,7 @@ if(isset($_GET['page'])) {
   $pageid = $_GET['page']; // Set $pageid to equel the value given in the URL.
 
 } else {
-  $pageid = 1; // Set $pageid equal to 1 or AKA the Home Page.
+  $pageid = 'home'; // Set $pageid equal to 1 or AKA the Home Page.
 }
 
 # Page Setup
