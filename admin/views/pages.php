@@ -1,4 +1,4 @@
-<h1>Admin Dashboard</h1>
+<h1>Page Manager</h1>
 
 <div class="row">
     <div class="col-md-3">
