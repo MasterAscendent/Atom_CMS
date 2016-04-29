@@ -34,4 +34,8 @@
     background-color: #f5f5f5;
   }
 
+  #btn-debug {
+    position: absolute;
+  }
+
 </style>

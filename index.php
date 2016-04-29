@@ -32,5 +32,9 @@
 
     <?php include(D_TEMPLATE.'/footer.php'); // Page Footer ?>
 
+    <div id="console-debug">
+      Test Debug window
+    </div>
+
   </body>
 </html>
