@@ -11,6 +11,9 @@ DEFINE('D_TEMPLATE', 'template');
 include('functions/data.php');
 include('functions/template.php');
 
+# Site Setup:
+$debug = data_setting_value($dbc, 'debug-status');
+
 $site_title = 'Atom CMS 2.0';
 
 if(isset($_GET['page'])) {
