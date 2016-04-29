@@ -2,5 +2,5 @@
   RewriteEngine on
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCOnd %{REQUEST_FILENAME} !-d
-  Rewrite ^ index.php [L]
+  RewriteRule ^ index.php [L]
 </IfModule>
