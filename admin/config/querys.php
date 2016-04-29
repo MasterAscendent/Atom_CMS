@@ -38,6 +38,8 @@
       }
     }
 
+    if(isset($_GET['id'])) { $opened = data_page($dbc, $_GET['id']); }
+
     break; // End Pages
 
     case 'users':
@@ -70,6 +72,8 @@
 
       }
     }
+
+    if(isset($_GET['id'])) { $opened = data_user($dbc, $_GET['id']); }
 
     break; //End Users
 

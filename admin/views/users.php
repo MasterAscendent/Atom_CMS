@@ -39,38 +39,25 @@
 
         <div class="form-group">
 
-          <label for="title">Title:</label>
-          <input class="form-control" type="text" name="title" id="title" value="<?php echo $opened['title']; ?>" placeholder="Page Title">
+          <label for="first">First Name:</label>
+          <input class="form-control" type="text" name="first" id="first" value="<?php echo $opened['first']; ?>" placeholder="First Name">
 
         </div>
 
         <div class="form-group">
 
-          <label for="user">User:</label>
-          <select class="form-control" name="user" id="user">
-            <option value="0">No user</option>
+          <label for="last">Last Name:</label>
+          <input class="form-control" type="text" name="last" id="last" value="<?php echo $opened['last']; ?>" placeholder="Last Name">
 
-            <?php
-              $q = "SELECT id FROM users ORDER BY first ASC";
-              $r = mysqli_query($dbc, $q);
+        </div>
 
-              while ($user_list = mysqli_fetch_assoc($r)) {
+        <div class="form-group">
 
-                $user_data = data_user($dbc, $user_list['id']);
+          <label for="status">Status:</label>
+          <select class="form-control" name="status" id="status">
 
-                ?>
-
-                  <option value="<?php echo $user_data['id']; ?>"
-                    <?php
-                    if(isset($_GET['id'])) {
-                      selected($user_data['id'], $opened['user'], 'selected');
-                    } else {
-                      selected($user_id['id'], $user['id'], 'selected');
-                    }
-
-                    ?>><?php echo $user_data['fullname']; ?></option>
-
-            <?php  } ?>
+            <option value="0" <?php if(isset($_GET['id'])) { selected('0', $opened['status'], 'selected'); } ?>>Inactive</option>
+            <option value="1" <?php if(isset($_GET['id'])) { selected('1', $opened['status'], 'selected'); } ?>>Active</option>
 
           </select>
 
@@ -78,29 +65,15 @@
 
         <div class="form-group">
 
-          <label for="slug">Slug:</label>
-          <input class="form-control" type="text" name="slug" id="slug" value="<?php echo $opened['slug']; ?>" placeholder="Page Slug">
+          <label for="email">Email:</label>
+          <input class="form-control" type="text" name="email" id="email" value="<?php echo $opened['email']; ?>" placeholder="Email">
 
         </div>
 
         <div class="form-group">
 
-          <label for="label">label:</label>
-          <input class="form-control" type="text" name="label" id="label" value="<?php echo $opened['label']; ?>" placeholder="Page Label">
-
-        </div>
-
-        <div class="form-group">
-
-          <label for="header">Header:</label>
-          <input class="form-control" type="text" name="header" id="header" value="<?php echo $opened['header']; ?>" placeholder="Page Header">
-
-        </div>
-
-        <div class="form-group">
-
-          <label for="body">Body:</label>
-          <textarea class="form-control editor" name="body" rows="8" id="body" placeholder="Page Body"><?php echo $opened['body']; ?></textarea>
+          <label for="password">Password:</label>
+          <input class="form-control" type="text" name="password" id="password" value="" placeholder="Password">
 
         </div>
 
