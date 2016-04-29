@@ -15,16 +15,7 @@
   <body>
     <div id="wrap">
 
-        <nav style="border-radius:0px; -webkit-border-radius:0px; -moz-border-radius:0px;" class="navbar navbar-default" role="navigation">
-          <div class="container">
-            <ul class="nav navbar-nav">
-                <li<?php if($pageid == 1) { echo ' class="active"';} ?>><a href="?page=1">Home</a></li>
-                <li<?php if($pageid == 2) { echo ' class="active"';} ?>><a href="?page=2">About Us</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-          </div>
-        </nav> <!-- END Nav -->
+      <?php include(D_TEMPLATE.'/navigation.php'); // Main navigation ?>
 
         <div class="container">
           <h1><?php echo $page['header']; ?></h1>
@@ -33,11 +24,7 @@
         </div>
     </div><!-- End Wrap -->
 
-      <footer id="footer">
-        <div class="container">
-          <p>This is my footer.</p>
-        </div>
-      </footer><!-- End Footer -->
+    <?php include(D_TEMPLATE.'/footer.php'); // Page Footer ?>
 
   </body>
 </html>
