@@ -73,7 +73,14 @@
         <div class="form-group">
 
           <label for="password">Password:</label>
-          <input class="form-control" type="text" name="password" id="password" value="" placeholder="Password">
+          <input class="form-control" type="password" name="password" id="password" value="" placeholder="Password">
+
+        </div>
+
+        <div class="form-group">
+
+          <label for="passwordv">Verify Password:</label>
+          <input class="form-control" type="password" name="passwordv" id="passwordv" value="" placeholder="Type Password Again">
 
         </div>
 
