@@ -4,6 +4,9 @@
 # Database Connection Here...
 $dbc = mysqli_connect('localhost', 'dev', 'Pinkfloyd7', 'AtomCMS') OR die('Could not connect to MySQL Database: '.mysqli_connect_error());
 
+# Functions:
+include('functions/data.php');
+
 $site_title = 'Atom CMS 2.0';
 
 if(isset($_GET['page'])) {
@@ -15,10 +18,6 @@ if(isset($_GET['page'])) {
 }
 
 # Page Setup
-$q = "SELECT * FROM pages WHERE id = $pageid";
-$r = mysqli_query($dbc, $q);
-
-$page = mysqli_fetch_assoc($r);
-
+$page = data_page($dbc, $pageid);
 
  ?>
