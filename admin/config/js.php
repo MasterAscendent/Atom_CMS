@@ -12,6 +12,10 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
+<script src="js/tinymce/tinymce.min.js"></script>
+
+
+
 <script>
   $(document).ready(function() {
     $("#console-debug").hide();
@@ -19,4 +23,8 @@
       $("#console-debug").toggle();
     });
   });
+
+  tinymce.init({
+    selector: "textarea"
+  })
 </script>
