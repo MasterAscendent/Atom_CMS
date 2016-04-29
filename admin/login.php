@@ -21,13 +21,18 @@
 
       <div class="container">
 
-      <h1>Login</h1>
-
       <div class="row">
 
         <div class="col-md-4 col-md-offset-4">
+          <div class="panel panel-info">
 
-          <form>
+            <div class="panel-heading">
+              <strong>Login</strong>
+            </div><!-- End Panel Heading -->
+
+            <div class="panel-body">
+
+          <form role="form">
            <div class="form-group">
              <label for="exampleInputEmail1">Email address</label>
              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
@@ -43,16 +48,21 @@
                <input type="checkbox"> Check me out
              </label>
            </div> -->
+
            <button type="submit" class="btn btn-default">Submit</button>
           </form>
 
-        </div>
+        </div><!-- End Panel Body -->
 
-      </div>
+        </div><!-- End Panel -->
+
+        </div> <!-- End Col -->
+
+      </div> <!-- End Row -->
 
 
 
-          </div>
+    </div><!-- End container -->
     </div><!-- End Wrap -->
 
 
