@@ -1,9 +1,10 @@
  <!-- Database Connection Here... -->
-
 <?php include('../config/Connection.php'); ?>
 
 <!DOCTYPE html>
+
 <html>
+
   <head>
     <meta charset="utf-8">
     <title><?php echo $page['title'].' | '.$site_title; ?></title>
@@ -14,6 +15,7 @@
     <?php include('config/js.php'); ?>
 
   </head>
+
   <body>
     <div id="wrap">
 
@@ -32,14 +34,24 @@
 
             <div class="panel-body">
 
-          <form role="form">
+              <?php
+                if($_POST) {
+
+                  echo $_POST['email'];
+                  echo '<br>';
+                  echo $_POST['password'];
+
+                }
+               ?>
+
+          <form action="login.php" method="post" role="form">
            <div class="form-group">
-             <label for="exampleInputEmail1">Email address</label>
-             <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+             <label for="email">Email address</label>
+             <input type="email" class="form-control" id="email" name="email" placeholder="Email">
            </div>
            <div class="form-group">
-             <label for="exampleInputPassword1">Password</label>
-             <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+             <label for="password">Password</label>
+             <input type="password" class="form-control" id="password" name="password" placeholder="Password">
            </div>
 
            <!--
