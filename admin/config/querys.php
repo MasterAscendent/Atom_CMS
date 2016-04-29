@@ -28,12 +28,12 @@
 
       if($r) {
 
-        $message = '<p>Page was' .$action. '!</p>';
+        $message = '<p class="bg-success">Page was' .$action. '!</p>';
 
       } else {
 
-        $message = '<p>Page could not be ' .$action. ' becuase: '.mysqli_error($dbc);
-        $message .= '<p>'.$q.'</p>';
+        $message = '<p class="bg-danger">Page could not be ' .$action. ' becuase: '.mysqli_error($dbc);
+        $message .= '<p class="bg-warning">Query: '.$q.'</p>';
 
       }
     }
@@ -85,12 +85,15 @@
 
       if($r) {
 
-        $message = '<p>User was ' .$action. '!</p>';
+        $message = '<p class="bg-success">User was ' .$action. '!</p>';
 
       } else {
 
-        $message = '<p>User could not be ' .$action. ' becuase: '.mysqli_error($dbc);
-        $message .= '<p>'.$q.'</p>';
+        $message = '<p class="bg-danger">User could not be ' .$action. ' becuase: '.mysqli_error($dbc);
+        if($varify == false) {
+          $message .= '<p class="bg-danger">Passwords empty & or do not match.</p>';
+        }
+        $message .= '<p class="bg-warning">Query: '.$q.'</p>';
 
       }
     }
