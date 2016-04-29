@@ -23,9 +23,7 @@
           <?php echo $page['body_formatted']; ?>
 
           <?php if(isset($_GET['debug']) == 1) { ?>
-            <pre>
-              <?php print_r($page); ?>
-            </pre>
+
           <?php } ?>
         </div>
     </div><!-- End Wrap -->
@@ -33,7 +31,9 @@
     <?php include(D_TEMPLATE.'/footer.php'); // Page Footer ?>
 
     <div id="console-debug">
-      Test Debug window
+      <pre>
+        <?php print_r($page); ?>
+      </pre>
     </div>
 
   </body>
