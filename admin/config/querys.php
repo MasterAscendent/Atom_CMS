@@ -49,6 +49,12 @@
       $first = mysqli_real_escape_string($dbc, $_POST['first']);
       $last = mysqli_real_escape_string($dbc, $_POST['last']);
 
+      if($_POST['email'] != '') {
+
+        $email = " email = '$_POST[email]'";
+
+      }
+
       if($_POST['password'] != '') {
 
         $password = " password = SHA1('$_POST[password]'),";
@@ -57,11 +63,11 @@
 
       if(isset($_POST['id']) != '') {
         $action = 'updated';
-        $q = "UPDATE users SET first = '$first', last = '$last', $password status = $_POST[status] WHERE id = $_GET[id]";
+        $q = "UPDATE users SET first = '$first', last = '$last', $email, $password status = $_POST[status] WHERE id = $_GET[id]";
 
       } else {
         $action = 'added';
-        $q = "INSERT INTO users (first, last, password, status) VALUES ('$first', '$last', SHA1 ('$_POST[password]'),'$_POST[status]')";
+        $q = "INSERT INTO users (first, last, email, password, status) VALUES ('$first', '$last', '$email', SHA1 ('$_POST[password]'),'$_POST[status]')";
       }
 
       $r = mysqli_query($dbc, $q);
