@@ -46,7 +46,7 @@ if(!isset($_SESSION['username'])) {
                   $header = mysqli_real_escape_string($dbc, $_POST['header']);
                   $body = mysqli_real_escape_string($dbc, $_POST['body']);
 
-                  $q = "INSERT INTO pages ($title, $label, $header, $body) VALUES ('$_POST[title]', '$_POST[label]', '$_POST[header]','$_POST[body]')";
+                  $q = "INSERT INTO pages (user, title, label, header, body) VALUES ($_POST[user], '$title', '$label', '$header','$body')";
                   $r = mysqli_query($dbc, $q);
 
                   if($r) {
@@ -107,16 +107,16 @@ if(!isset($_SESSION['username'])) {
                   <option value="0">No user</option>
 
                   <?php
-                    $q = "SELECT email FROM users ORDER BY first ASC";
+                    $q = "SELECT id FROM users ORDER BY first ASC";
                     $r = mysqli_query($dbc, $q);
 
                     while ($user_list = mysqli_fetch_assoc($r)) {
 
-                      $user_data = data_user($dbc, $user_list['email']);
+                      $user_data = data_user($dbc, $user_list['id']);
 
                       ?>
 
-                        <option value="0"><?php echo $user_data['fullname']; ?></option>
+                        <option value="<?php echo $user_data['id']; ?>"><?php echo $user_data['fullname']; ?></option>
 
                   <?php  } ?>
 
