@@ -27,9 +27,8 @@ if(isset($_GET['page'])) {
 # Page Setup
 $page = data_page($dbc, $pageid);
 
-$q = "SELECT * FROM users WHERE email = '$_SESSION[username]'";
-$r = mysqli_query($dbc, $q);
+# User Setup:
 
-$user = mysqli_fetch_assoc($r);
+$user = data_user($dbc, $_SESSION['username']);
 
  ?>

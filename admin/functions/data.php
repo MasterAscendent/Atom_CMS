@@ -10,6 +10,20 @@
 
   }
 
+  Function data_user($dbc, $id) {
+
+    $q = "SELECT * FROM users WHERE email = '$id'";
+    $r = mysqli_query($dbc, $q);
+
+    $data = mysqli_fetch_assoc($r);
+
+    $data['fullname'] = $data['first']. ' ' .$data['last'];
+    $data['fullname_reverse'] = $data['last']. ', ' .$data['first'];
+
+    return $data;
+
+  }
+
   function data_page($dbc, $id) {
 
 

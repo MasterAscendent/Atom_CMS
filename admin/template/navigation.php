@@ -20,7 +20,7 @@
         </li>
 
           <li class="dropdown">
-            <a href="#" class="data-toggle" data-toggle="dropdown"><?php echo $user['first']. ' ' .$user['last']; ?> <b class="caret"></b></a>
+            <a href="#" class="data-toggle" data-toggle="dropdown"><?php echo $user['fullname']; ?> <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><a href="logout.php">Logout</a></li>
             </ul>
