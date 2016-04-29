@@ -17,6 +17,10 @@
 
 <style>
 
+* {
+  border-radius: 0 !important;
+}
+
   html,
   body {
     height: 100%;

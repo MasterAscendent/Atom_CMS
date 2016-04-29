@@ -28,12 +28,12 @@
 
       if($r) {
 
-        $message = '<p class="bg-success">Page was' .$action. '!</p>';
+        $message = '<p class="alert alert-success">Page was' .$action. '!</p>';
 
       } else {
 
-        $message = '<p class="bg-danger">Page could not be ' .$action. ' becuase: '.mysqli_error($dbc);
-        $message .= '<p class="bg-warning">Query: '.$q.'</p>';
+        $message = '<p class="alert alert-danger">Page could not be ' .$action. ' becuase: '.mysqli_error($dbc);
+        $message .= '<p class="alert alert-warning">Query: '.$q.'</p>';
 
       }
     }
@@ -65,29 +65,31 @@
       if(isset($_POST['id']) != '') {
         $action = 'updated';
         $q = "UPDATE users SET first = '$first', last = '$last', email = '$_POST[$email]', $password status = $_POST[status] WHERE id = $_GET[id]";
+        $r = mysqli_query($dbc, $q);
 
       } else {
 
         $action = 'added';
-        if($varify == true) {
+
           $q = "INSERT INTO users (first, last, email, password, status) VALUES ('$first', '$last', '$_POST[email]', SHA1 ('$_POST[password]'),'$_POST[status]')";
-        }
+
+          if($varify == true) {
+            $r = mysqli_query($dbc, $q);
+          }
 
       }
 
-      $r = mysqli_query($dbc, $q);
-
       if($r) {
 
-        $message = '<p class="bg-success">User was ' .$action. '!</p>';
+        $message = '<p class="alert alert-success">User was ' .$action. '!</p>';
 
       } else {
 
-        $message = '<p class="bg-danger">User could not be ' .$action. ' becuase: '.mysqli_error($dbc);
+        $message = '<p class="alert alert-danger">User could not be ' .$action. ' becuase: '.mysqli_error($dbc);
         if($varify == false) {
-          $message .= '<p class="bg-danger">Passwords empty & or do not match.</p>';
+          $message .= '<p class="alert alert-danger">Passwords empty & or do not match.</p>';
         }
-        $message .= '<p class="bg-warning">Query: '.$q.'</p>';
+        $message .= '<p class="alert alert-warning">Query: '.$q.'</p>';
 
       }
     }
