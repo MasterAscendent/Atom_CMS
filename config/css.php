@@ -44,10 +44,12 @@
     left: 0px;
     width: 30%;
     height: 700px;
+    overflow-y: scroll;
+    background-color: #ffffff;
+    bod-shadow: 2px 2px 5px #CCCCCC;
   }
 
 #console-debug pre {
-  height: 700px;
-  overflow-y: scroll;
+
 }
 </style>

@@ -2,9 +2,9 @@
   function data_setting_value($dbc, $id) {
 
     $q = "SELECT * FROM settings WHERE id = '$id'";
-    $r = mysqli_query(dbc, $q);
+    $r = mysqli_query($dbc, $q);
 
-    $data = mysql_fetch_assoc($r);
+    $data = mysqli_fetch_assoc($r);
 
     return $data['value'];
 

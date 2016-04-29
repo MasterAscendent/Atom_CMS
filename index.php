@@ -30,11 +30,6 @@
 
     <?php include(D_TEMPLATE.'/footer.php'); // Page Footer ?>
 
-    <div id="console-debug">
-      <pre>
-        <?php print_r($page); ?>
-      </pre>
-    </div>
-
+    <?php if($debug == 1) { include('widgets/debug.php'); } ?>
   </body>
 </html>
