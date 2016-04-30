@@ -1,6 +1,19 @@
 <h1>Navigation</h1>
 
 <div class="row">
+
+  <div class="col-md-3">
+
+    <ul id="sort-nav">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+      <li>Item 5</li>
+    </ul>
+
+  </div>
+
     <div class="col-md-12">
 
       <?php if(isset($message)) { echo $message; } ?>
