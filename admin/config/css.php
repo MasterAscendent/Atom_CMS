@@ -12,6 +12,10 @@
 <!-- jQuery CSS -->
 <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 
+<!-- Dropzone CSS -->
+<link rel="stylesheet" href="css/dropzone.css">
+
+
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
