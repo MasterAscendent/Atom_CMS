@@ -52,6 +52,22 @@
       }
     });
 
+    $('.nav-form').submit(function(event) {
+
+      var navData = $(this).serializeArray();
+
+      $.ajax({
+
+        url: "ajax/navigation.php",
+        type: "POST",
+        data: navData
+
+      });
+
+      event.preventDefault();
+
+    });
+
   }); // End document ready
 
 
