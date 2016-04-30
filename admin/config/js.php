@@ -45,7 +45,10 @@
     })
 
     $("#sort-nav").sortable({
-      cursor: "move"
+      cursor: "move",
+      update: function() {
+        $.get("ajax/list-sort.php");
+      }
     });
 
   }); // End document ready
