@@ -17,7 +17,54 @@
         <a data-toggle="collapse" name="button" data-target="#form_<?php echo $list['id']; ?>">
         <?php echo $list['label']; ?> <i class="fa fa-chevron-down"></i>
         </a>
-        <div class="collapse" id="form_<?php echo $list['id']; ?>">The form goes here.</div>
+        <div class="collapse" id="form_<?php echo $list['id']; ?>">
+
+          <form class="form-horizontal" action="index.php?page=navigation&id=<?php echo $list['id']; ?>" method="post" role="form">
+
+            <div class="form-group">
+
+              <label class="col-sm-2 control-label" for="id">ID:</label>
+              <div class="col-sm-10">
+                <input class="form-control input-sm" type="text" name="id" id="id" value="<?php echo $list['id']; ?>" placeholder="id-name" autocomplete="off">
+              </div>
+              
+            </div>
+
+            <div class="form-group">
+
+              <label class="col-sm-2 control-label" for="label">Label:</label>
+              <div class="col-sm-10">
+                <input class="form-control input-sm" type="text" name="label" id="label" value="<?php echo $list['label']; ?>" placeholder="Label" autocomplete="off">
+              </div>
+
+            </div>
+
+            <div class="form-group">
+
+              <label class="col-sm-2 control-label" for="url">URL:</label>
+              <div class="col-sm-10">
+                <input class="form-control input-sm" type="text" name="url" id="url" value="<?php echo $list['url']; ?>" placeholder="URL" autocomplete="off">
+              </div>
+
+            </div>
+
+            <div class="form-group">
+
+              <label class="col-sm-2 control-label" for="status">Status:</label>
+              <div class="col-sm-10">
+                <input class="form-control input-sm" type="text" name="status" id="status" value="<?php echo $list['status']; ?>" placeholder="" autocomplete="off">
+              </div>
+
+            </div>
+
+            <button type="submit" class="btn btn-default">Save</button>
+            <input type="hidden" name="submitted" value="1">
+
+            <input type="hidden" name="openedid" value="<?php echo $list['id']; ?>">
+
+          </form>
+
+        </div>
       </li>
 
       <?php } ?>
