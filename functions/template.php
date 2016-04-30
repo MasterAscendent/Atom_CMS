@@ -1,7 +1,7 @@
 <?php
 function nav_main($dbc, $path) {
 
-  $q = "SELECT * FROM navigation";
+  $q = "SELECT * FROM navigation ORDER BY position ASC";
   $r = mysqli_query($dbc, $q);
 
   while($nav = mysqli_fetch_assoc($r)) {

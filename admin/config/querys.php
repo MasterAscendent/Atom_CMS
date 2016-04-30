@@ -98,6 +98,34 @@
 
     break; //End Users
 
+    case 'navigation':
+
+    if(isset($_POST['submitted']) == 1) {
+
+      $label = mysqli_real_escape_string($dbc, $_POST['label']);
+      $value = mysqli_real_escape_string($dbc, $_POST['url']);
+
+      if(isset($_POST['id']) != '') {
+        $action = 'updated';
+        $q = "UPDATE navigation SET id = '$_POST[id]', label = '$label', url = '$url', position = $_POST[position], status = $_POST[status] WHERE id = '$_POST[openedid]'";
+        $r = mysqli_query($dbc, $q);
+
+      }
+
+      if($r) {
+
+        $message = '<p class="alert alert-success">Navigation item was ' .$action. '!</p>';
+
+      } else {
+
+        $message = '<p class="alert alert-danger">Navigation item could not be ' .$action. ' becuase: '.mysqli_error($dbc);
+        $message .= '<p class="alert alert-warning">Query: '.$q.'</p>';
+
+      }
+    }
+
+    break; // End Navigation
+
     case 'settings':
 
     if(isset($_POST['submitted']) == 1) {

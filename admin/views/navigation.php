@@ -29,8 +29,8 @@
 
             <div class="form-group">
 
-              <label class="sr-only" for="value">Value:</label>
-              <input class="form-control" type="text" name="value" id="value" value="<?php echo $opened['url']; ?>" placeholder="Value" autocomplete="off">
+              <label class="sr-only" for="url">URL:</label>
+              <input class="form-control" type="text" name="url" id="url" value="<?php echo $opened['url']; ?>" placeholder="URL" autocomplete="off">
 
             </div>
 
