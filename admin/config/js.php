@@ -28,7 +28,7 @@
       var selected = $(this).attr("id");
       var pageid = selected.split("del_").join("");
 
-      $.get("ajax/pages.php?id="+selected);
+      $.get("ajax/pages.php?id="+pageid);
 
       $("#page_"+pageid).remove();
 
