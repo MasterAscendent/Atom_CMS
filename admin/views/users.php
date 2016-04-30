@@ -7,6 +7,12 @@
 
       var myDropzone = new Dropzone("#avatar-dropzone");
 
+      myDropzone.on("success", function(file){
+
+        $("#avatar").load("ajax/avatar.php?id=<?php echo $opened['id']; ?>");
+
+      });
+
     });
 
   </script>
@@ -51,7 +57,11 @@
       <form action="index.php?page=users&id=<?php echo $opened['id']; ?>" method="post" role="form">
 
         <?php if($opened['avatar'] != '') { ?>
-          <img src="../uploads/<?php echo $opened['avatar']; ?>">
+
+          <div id="avatar">
+            <img src="../uploads/<?php echo $opened['avatar']; ?>">
+          </div>
+
         <?php } ?>
 
         <div class="form-group">
