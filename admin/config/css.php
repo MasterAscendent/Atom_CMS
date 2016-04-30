@@ -63,4 +63,13 @@
 #console-debug pre {
 
 }
+
+.avatar-container {
+
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  background-position: center center;
+}
+
 </style>

@@ -10,4 +10,4 @@
 
  ?>
 
-<img src="../uploads/<?php echo $data['avatar']; ?>">
+<div class="avatar-container" style="background-image: url('../uploads/<?php echo $opened['avatar']; ?>')"></div>
