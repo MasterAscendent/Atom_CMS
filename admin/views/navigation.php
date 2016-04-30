@@ -13,7 +13,7 @@
 
         while ($list = mysqli_fetch_assoc($r)) { ?>
 
-      <li class="list-group-item"><?php echo $list['label']; ?></li>
+      <li id="list_<?php echo $list['id']; ?>" class="list-group-item"><?php echo $list['label']; ?></li>
 
       <?php } ?>
 

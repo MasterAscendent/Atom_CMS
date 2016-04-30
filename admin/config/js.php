@@ -47,7 +47,8 @@
     $("#sort-nav").sortable({
       cursor: "move",
       update: function() {
-        $.get("ajax/list-sort.php");
+        var order = $(this).sortable("serialize");
+        $.get("ajax/list-sort.php", order);
       }
     });
 
