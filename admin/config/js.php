@@ -28,9 +28,14 @@
       var selected = $(this).attr("id");
       var pageid = selected.split("del_").join("");
 
-      $.get("ajax/pages.php?id="+pageid);
+      var confirmed = confirm("Are you sure you want to delete this page?:");
 
-      $("#page_"+pageid).remove();
+      if(confirmed == true) {
+        $.get("ajax/pages.php?id="+pageid);
+
+        $("#page_"+pageid).remove();
+      }
+
 
       // alert(selected);
 
