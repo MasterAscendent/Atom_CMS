@@ -15,21 +15,21 @@
 
             <div class="form-group">
 
-              <label for="id">ID:</label>
+              <label class="sr-only" for="id">ID:</label>
               <input class="form-control" type="text" name="id" id="id" value="<?php echo $opened['id']; ?>" placeholder="id-name" autocomplete="off">
 
             </div>
 
             <div class="form-group">
 
-              <label for="label">Label:</label>
+              <label class="sr-only" for="label">Label:</label>
               <input class="form-control" type="text" name="label" id="label" value="<?php echo $opened['label']; ?>" placeholder="Label" autocomplete="off">
 
             </div>
 
             <div class="form-group">
 
-              <label for="value">Value:</label>
+              <label class="sr-only" for="value">Value:</label>
               <input class="form-control" type="text" name="value" id="value" value="<?php echo $opened['value']; ?>" placeholder="Value" autocomplete="off">
 
             </div>
