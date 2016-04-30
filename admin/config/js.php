@@ -26,8 +26,11 @@
     $(".btn-delete").on("click", function() {
 
       var selected = $(this).attr("id");
+      var pageid = selected.split("del_").join("");
 
       $.get("ajax/pages.php?id="+selected);
+
+      $("#page_"+pageid).remove();
 
       // alert(selected);
 
