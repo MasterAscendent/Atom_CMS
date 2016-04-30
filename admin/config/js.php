@@ -22,6 +22,15 @@
     $("#btn-debug").click(function() {
       $("#console-debug").toggle();
     });
+
+    $(".btn-delete").on("click", function() {
+
+      var selected = $(this).attr("id");
+
+      alert(selected);
+
+    })
+
   });
 
 
