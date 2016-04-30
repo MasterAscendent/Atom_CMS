@@ -44,7 +44,11 @@
 
     })
 
-  });
+    $("#sort-nav").sortable({
+      cursor: "move"
+    });
+
+  }); // End document ready
 
 
   tinymce.init({

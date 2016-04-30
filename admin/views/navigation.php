@@ -4,12 +4,12 @@
 
   <div class="col-md-3">
 
-    <ul id="sort-nav">
-      <li>Item 1</li>
-      <li>Item 2</li>
-      <li>Item 3</li>
-      <li>Item 4</li>
-      <li>Item 5</li>
+    <ul id="sort-nav" class="list-group">
+      <li class="list-group-item">Item 1</li>
+      <li class="list-group-item">Item 2</li>
+      <li class="list-group-item">Item 3</li>
+      <li class="list-group-item">Item 4</li>
+      <li class="list-group-item">Item 5</li>
     </ul>
 
   </div>
