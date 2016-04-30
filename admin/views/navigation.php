@@ -5,11 +5,18 @@
   <div class="col-md-3">
 
     <ul id="sort-nav" class="list-group">
-      <li class="list-group-item">Item 1</li>
-      <li class="list-group-item">Item 2</li>
-      <li class="list-group-item">Item 3</li>
-      <li class="list-group-item">Item 4</li>
-      <li class="list-group-item">Item 5</li>
+
+      <?php
+
+        $q = "SELECT * FROM navigation ORDER BY position ASC";
+        $r = mysqli_query($dbc, $q);
+
+        while ($list = mysqli_fetch_assoc($r)) { ?>
+
+      <li class="list-group-item"><?php echo $list['label']; ?></li>
+
+      <?php } ?>
+
     </ul>
 
   </div>
