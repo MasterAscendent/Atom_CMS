@@ -1,15 +1,16 @@
-<script>
+<?php if(isset($opened['id'])) { ?>
+  <script>
 
-  $(document).ready(function() {
+    $(document).ready(function() {
 
-    Dropzone.autoDiscover = false;
+      Dropzone.autoDiscover = false;
 
-    var myDropzone = new Dropzone("#avatar-dropzone");
+      var myDropzone = new Dropzone("#avatar-dropzone");
 
-  });
+    });
 
-</script>
-
+  </script>
+<?php } ?>
 <h1>User Manager</h1>
 
 <div class="row">
@@ -48,6 +49,10 @@
 
 
       <form action="index.php?page=users&id=<?php echo $opened['id']; ?>" method="post" role="form">
+
+        <?php if($opened['avatar'] != '') { ?>
+          <img src="../uploads/<?php echo $opened['avatar']; ?>">
+        <?php } ?>
 
         <div class="form-group">
 
@@ -105,8 +110,9 @@
 
       </form>
 
+      <?php if(isset($opened['id'])) { ?>
       <form action="uploads.php?id=<?php echo $opened['id']; ?>" class="dropzone" id="avatar-dropzone">
-
+      <?php } ?>
         <input type="file" name="file">
 
       </form>
