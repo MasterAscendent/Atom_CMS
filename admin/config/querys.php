@@ -100,6 +100,30 @@
 
     case 'settings':
 
+    if(isset($_POST['submitted']) == 1) {
+
+      $label = mysqli_real_escape_string($dbc, $_POST['label']);
+      $value = mysqli_real_escape_string($dbc, $_POST['value']);
+
+      if(isset($_POST['id']) != '') {
+        $action = 'updated';
+        $q = "UPDATE settings SET id = '$_POST[id]', label = '$label', value = '$value' WHERE id = '$_POST[openedid]'";
+        $r = mysqli_query($dbc, $q);
+
+      }
+
+      if($r) {
+
+        $message = '<p class="alert alert-success">Setting was ' .$action. '!</p>';
+
+      } else {
+
+        $message = '<p class="alert alert-danger">Setting could not be ' .$action. ' becuase: '.mysqli_error($dbc);
+        $message .= '<p class="alert alert-warning">Query: '.$q.'</p>';
+
+      }
+    }
+
     break; // End Settings
 
     default:
