@@ -38,6 +38,7 @@ if (!empty($_FILES)) {
     if(!is_dir($deleteFile)) {
       unlink($deleteFile);
     }
+  }
 }
 
  ?>
