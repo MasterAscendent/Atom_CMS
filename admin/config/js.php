@@ -27,7 +27,9 @@
 
       var selected = $(this).attr("id");
 
-      alert(selected);
+      $.get("ajax/pages.php?id="+selected);
+
+      // alert(selected);
 
     })
 
