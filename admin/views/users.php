@@ -55,10 +55,8 @@
 
 
       <form action="index.php?page=users&id=<?php echo $opened['id']; ?>" method="post" role="form">
-
-        <?php if($opened['avatar'] != '') { ?>
-
           <div id="avatar">
+            <?php if($opened['avatar'] != '') { ?>
             <div class="avatar-container" style="background-image: url('../uploads/<?php echo $opened['avatar']; ?>')"></div>
           </div>
 
