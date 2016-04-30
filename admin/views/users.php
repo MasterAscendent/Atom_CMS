@@ -1,3 +1,15 @@
+<script>
+
+  $(document).ready(function() {
+
+    Dropzone.autoDiscover = false;
+
+    var myDropzone = new Dropzone("#avatar-dropzone");
+
+  });
+
+</script>
+
 <h1>User Manager</h1>
 
 <div class="row">
@@ -90,6 +102,12 @@
         <?php if(isset($opened['id'])) { ?>
         <input type="hidden" name="id" value="<?php echo $opened['id']; ?>">
         <?php } ?>
+
+      </form>
+
+      <form action="#" class="dropzone" id="avatar-dropzone">
+
+        <input type="file" name="file">
 
       </form>
 

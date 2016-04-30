@@ -16,7 +16,7 @@
 <script src="js/tinymce/tinymce.min.js"></script>
 
 <!-- Dropzone.js -->
-<script src="js/tinymce/tinymce.min.js"></script>
+<script src="js/dropzone.js"></script>
 
 
 <script>
