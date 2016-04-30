@@ -33,7 +33,8 @@ if (!empty($_FILES)) {
   move_uploaded_file($tempFile, $targetFile); // 6
 
   $deleteFile = $targetPath.$old['avatar'];
-  if($old['avatar'] != ''){
+
+  if($old['avatar'] != '') {
     if(!is_dir($deleteFile)) {
       unlink($deleteFile);
     }
