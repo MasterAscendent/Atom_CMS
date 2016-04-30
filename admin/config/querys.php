@@ -103,7 +103,7 @@
     if(isset($_POST['submitted']) == 1) {
 
       $label = mysqli_real_escape_string($dbc, $_POST['label']);
-      $value = mysqli_real_escape_string($dbc, $_POST['url']);
+      $url = mysqli_real_escape_string($dbc, $_POST['url']);
 
       if(isset($_POST['id']) != '') {
         $action = 'updated';
